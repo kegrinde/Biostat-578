@@ -61,7 +61,8 @@ The extra functionality offered by `data.table` allows us to modify, reshape, an
     
     
 ```{r eval=FALSE}
-install.packages("data.table")
+# Only install if not already installed. 
+require(data.table) || install.packages("data.table")
 ```
 - latest bug-fixes + enhancements (No need to do that, we will use the stable release)
 ```{r eval=FALSE}
@@ -747,9 +748,9 @@ Here we will use SQLite, which is a self contained relational database managemen
 Here we will make use of the [Bioconductor](http://www.bioconductor.org) project to load and use an SQLite database.
 
 ```{r eval=FALSE}
-# You only need to run this once
+# You only need to run this once. Install if require() fails.
 source("http://bioconductor.org/biocLite.R")
-biocLite(c("org.Hs.eg.db"))
+require(org.Hs.eg.db) || biocLite("org.Hs.eg.db")
 ```
 
 ```{r load-Hs-library, cache=FALSE}
